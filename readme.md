@@ -10,7 +10,7 @@ fun	   函数内的局部变量：未定义
 
 class	类的成员变量的默认初始化：未定义
 
-![image-20250316145629385](readme.assets\image-20250316145629385.png)
+![image-20250316145629385](readme.assets/image-20250316145629385.png)
 
 
 
@@ -42,7 +42,7 @@ class	类的成员变量的默认初始化：未定义
 
   // }
 
-![image-20250316145926240](readme.assets\image-20250316145926240.png)
+![image-20250316145926240](readme.assets/image-20250316145926240.png)
 
 
 
