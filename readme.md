@@ -188,7 +188,32 @@ obj2->nonVirtualFunction();
 
 
 
+# typeCheck.cpp
 
+由于CRTP不能实现动态多态，我又想通过handle实现多态；
+
+通过如下**类型检查**实现
+
+```c++
+void handle(const A* obj) {
+    if (typeid(*obj) == typeid(B)) {
+        std::cout << "Handling B* (via A*)" << std::endl;
+        obj->display();
+    } else if (typeid(*obj) == typeid(C)) {
+        std::cout << "Handling C* (via A*)" << std::endl;
+        obj->display();
+    } else {
+        std::cout << "Handling A* (base)" << std::endl;
+        obj->display();
+    }
+}
+```
+
+
+
+
+
+![image-20250401193550047](readme.assets/image-20250401193550047.png)
 
 
 
