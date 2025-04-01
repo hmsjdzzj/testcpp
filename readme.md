@@ -131,3 +131,38 @@ S是空类，占用1字节；
 T是纯虚函数，也是8B；
 
 ![image-20250316192754265](readme.assets/image-20250316192754265.png)
+
+
+
+
+
+# CRTP.cpp
+
+不用虚函数，实现了多态的功能。
+
+这里是静态多态，需要在编译期间完成；
+
+这里是直接创建子类的对象，而不是返回基类的指针；
+
+  B b(2);
+
+  C c;
+
+通过静态重载handle实现不同的功能；
+
+  handle(b); // Calls B's specific handle
+
+  handle(c); // Calls C's specific handle
+
+
+
+![image-20250401184631582](readme.assets/image-20250401184631582.png)
+
+
+
+
+
+
+
+
+
