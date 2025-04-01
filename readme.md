@@ -134,6 +134,32 @@ T是纯虚函数，也是8B；
 
 
 
+# virtual.cpp
+
+测试纯虚函数、虚函数、非虚函数 继承的区别
+
+A* obj = new B();
+
+**纯虚函数：只继承接口**
+
+obj->pureVirtualFunction();
+
+**虚函数：继承接口和缺省实现**
+
+obj->virtualFunction();
+
+**非虚函数：继承接口和强制实现**
+
+obj->nonVirtualFunction();
+
+B* obj2 = new B();
+
+obj2->nonVirtualFunction();
+
+没有多态
+
+![376e8e12250721d3e490b2c503bd210](readme.assets/376e8e12250721d3e490b2c503bd210.png)
+
 
 
 # CRTP.cpp
