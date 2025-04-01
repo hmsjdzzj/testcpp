@@ -217,3 +217,59 @@ void handle(const A* obj) {
 
 
 
+# factoryPattern.cpp
+
+##### 1、简单工厂
+
+只有唯一的工厂，create(type id) 通过if else判断调用哪个构造
+
+##### 2、工厂方法
+
+每个类对应一个工厂。
+
+##### 2.1、模板工厂
+
+通过模板省去写多个。
+
+```c++
+template <class B>
+struct Fatory {
+    static Peoson* create(int i) {
+        return new B();
+    } 
+};
+```
+
+##### 3、抽象工厂
+
+有多个生产函数，生产不同类别的东西；
+
+createA();
+
+createB();
+
+##### 3.1 抽象模板工厂
+
+多一个模板参数代表生产的不同类别。
+
+```c++
+template <class TBase,class TDerive>
+struct Fatory {
+    static Tbase* create() {
+        return new TDrive();
+    } 
+};
+```
+
+
+
+### 手动分割线
+
+这段代码是通过工厂模式消除if else判断；
+
+维护一个工厂的map；根据typeid 从map中找对应的工厂，创建对象。
+
+对比维护一个`ptr<Derive>`的map，这里的ptr是唯一的。不能生成多个。
+
+![image-20250401193942199](readme.assets/image-20250401193942199.png) ![image-20250401194030734](readme.assets/image-20250401194030734.png)
+
